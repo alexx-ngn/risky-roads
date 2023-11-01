@@ -11,11 +11,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class MyWorld extends World
 {
+    public static int imageCount = 0;
+    public static GreenfootImage bgImage = new GreenfootImage("lvl1.png");
 
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+    public void act() 
+    {
+        imageCount -= 1; //(or any other value; small -> slow moving, big -> fast movement)
+        drawBackgroundImage();
+    }
+    public void drawBackgroundImage() 
+    {
+        if (imageCount < -bgImage.getWidth()) {
+            imageCount += bgImage.getWidth();
+        }
+        int temp = -imageCount;
+        getBackground().drawImage(bgImage, 0, temp);
+        getBackground().drawImage(bgImage, 0, temp - bgImage.getWidth());
+    }
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -23,15 +35,11 @@ public class MyWorld extends World
         prepare();
     }
     
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
     private void prepare()
     {
         test test = new test();
         addObject(test,245,470);
-        Background background = new Background();
-        addObject(background,36,8);
-    }
+        test.setLocation(238,409);
+        test.setLocation(233,260);
+    } 
 }

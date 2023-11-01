@@ -8,10 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class test extends Actor
 {
-    /**
-     * Act - do whatever the test wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
         String key = Greenfoot.getKey();
@@ -30,5 +26,16 @@ public class test extends Actor
             setLocation(getX()-tileMovement,getY());
             setImage("wombat.png");
         }
+        moveScrollingWombat();
+        
+        //Remove wombat if at edge
+        if (isAtEdge())
+        {
+            getWorld().removeObject(this);    
+        }
+    }
+    public void moveScrollingWombat()
+    {
+        setLocation(getX(),getY()+1);
     }
 }
