@@ -4,19 +4,20 @@ public class Birch_log extends Actor
 {
     public void act()
     {
-        move(4);
         Actor wombat = getOneIntersectingObject(test.class);
         if (wombat != null)
         {
             getWorld().removeObject(wombat);
         }
-        if (isAtEdge())
-        {
-            removeLog();
+        if (isAtEdge()){
+            getWorld().removeObject(this);
+        } else {
+            move(1);
+            moveScrollingLog();
         }
     }
-    public void removeLog()
+    public void moveScrollingLog()
     {
-            getWorld().removeObject(this);
+        setLocation(getX(),getY()+1);
     }
 }
