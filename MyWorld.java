@@ -1,12 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class MyWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-
 //private GreenfootImage bgImage = new GreenfootImage("board.jpg");
 
 public class MyWorld extends World
@@ -18,6 +11,8 @@ public class MyWorld extends World
     {
         imageCount -= 1; //(or any other value; small -> slow moving, big -> fast movement)
         drawBackgroundImage();
+        spawnRateOak();
+        spawnRateBirch();
     }
     public void drawBackgroundImage() 
     {
@@ -34,12 +29,25 @@ public class MyWorld extends World
         super(500, 500, 1);
         prepare();
     }
-    
+    public void spawnRateOak()
+    {
+        if (Greenfoot.getRandomNumber(50)==1)
+        {
+            addObject(new Oak_log(), 0, Greenfoot.getRandomNumber(560));
+        }
+    }
+    public void spawnRateBirch()
+    {
+        if (Greenfoot.getRandomNumber(50)==1)
+        {
+            addObject(new Birch_log(), 0, Greenfoot.getRandomNumber(560));
+        }
+    }
     private void prepare()
     {
         test test = new test();
-        addObject(test,245,470);
-        test.setLocation(238,409);
-        test.setLocation(233,260);
-    } 
+        addObject(test,0,0);
+        test.setLocation(256,425);
+        test.setLocation(277,414);
+    }
 }
