@@ -15,12 +15,10 @@ public class MyWorld extends World
     {
         imageCount -= 1; //(or any other value; small -> slow moving, big -> fast movement)
         drawBackgroundImage();
-        spawnRateOak();
-        spawnRateBirch();
         
         //Updates river coordinates
-        riverX = (((river) getObjects(river.class).get(0)).getX());
-        riverY = (((river) getObjects(river.class).get(0)).getY());
+        riverX = (((river) getObjects(river.class).get(river.riverCount)).getX());
+        riverY = (((river) getObjects(river.class).get(river.riverCount)).getY());
     }
     public void drawBackgroundImage() 
     {
@@ -30,20 +28,6 @@ public class MyWorld extends World
         int temp = -imageCount;
         getBackground().drawImage(bgImage, 0, temp);
         getBackground().drawImage(bgImage, 0, temp - bgImage.getWidth());
-    }
-    public void spawnRateOak()
-    {
-        if (Greenfoot.getRandomNumber(100)==1)
-        {
-            addObject(new Oak_log(), riverX, riverY);
-        }
-    }
-    public void spawnRateBirch()
-    {
-        if (Greenfoot.getRandomNumber(100)==1)
-        {
-            addObject(new Birch_log(),riverX, riverY);
-        }
     }
     public MyWorld()
     {    
@@ -59,5 +43,6 @@ public class MyWorld extends World
         test.setLocation(277,414);
         river river = new river();
         addObject(river,251,99);
+        river.riverCount = 0;
     }
 }

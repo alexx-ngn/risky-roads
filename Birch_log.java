@@ -8,6 +8,7 @@ public class Birch_log extends Actor
         if (wombat != null)
         {
             getWorld().removeObject(wombat);
+            
         }
         if (isAtEdge()){
             getWorld().removeObject(this);

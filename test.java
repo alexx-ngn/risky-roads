@@ -10,6 +10,8 @@ public class test extends Actor
         {
             getWorld().removeObject(this);
             Greenfoot.stop();
+        } else {
+            moveScrollingWombat();
         }
 
         if("up".equals(key) || ("w".equals(key))){
@@ -26,7 +28,7 @@ public class test extends Actor
             setLocation(getX()-tileMovement,getY());
             setImage("wombat.png");
         }
-        moveScrollingWombat();
+        
     }
     public void moveScrollingWombat()
     {

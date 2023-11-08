@@ -1,7 +1,7 @@
 #Greenfoot project file
 class.Birch_log.image=Log2.png
 class.MyWorld.image=lvl1.png
-class.Oak_log.image=Log1_pixel.png
+class.Oak_log.image=Log1.png
 class.frostLevel.image=bluerock.jpg
 class.menu.image=menu.png
 class.river.image=river.png
