@@ -19,8 +19,8 @@ public class MyWorld extends World
         spawnRateBirch();
         
         //Updates river coordinates
-        riverX = (((river) getObjects(river.class).get(river.riverCount)).getX());
-        riverY = (((river) getObjects(river.class).get(river.riverCount)).getY());
+        riverX = (((river) getObjects(river.class).get(0)).getX());
+        riverY = (((river) getObjects(river.class).get(0)).getY());
     }
     public void drawBackgroundImage() 
     {
@@ -33,14 +33,14 @@ public class MyWorld extends World
     }
     public void spawnRateOak()
     {
-        if (Greenfoot.getRandomNumber(50)==1)
+        if (Greenfoot.getRandomNumber(100)==1)
         {
             addObject(new Oak_log(), riverX, riverY);
         }
     }
     public void spawnRateBirch()
     {
-        if (Greenfoot.getRandomNumber(50)==1)
+        if (Greenfoot.getRandomNumber(100)==1)
         {
             addObject(new Birch_log(),riverX, riverY);
         }

@@ -1,11 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
-/**
- * Write a description of class river here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class river extends Actor
 {
     public static int riverCount = 0;
@@ -13,15 +6,15 @@ public class river extends Actor
     public void act()
     {
         timer--;
-        if (isAtEdge())
+        if (getY() == getWorld().getHeight()-1)
         {
             getWorld().removeObject(this);
-            riverCount += 1;
+            riverCount++;
         } else {
             moveScrollingRiver();
         }
         if (timer == 0) {
-            getWorld().addObject(new river(),251,99);
+            getWorld().addObject(new river(),250,-50);
             timer = 150;
         }
     }
