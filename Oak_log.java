@@ -10,7 +10,7 @@ public class Oak_log extends Actor
             getWorld().removeObject(wombat);
             Greenfoot.stop();
         }
-        if (isAtEdge())
+        if (getX() == getWorld().getWidth()-1 || getY() == getWorld().getHeight()-1) 
         {
             getWorld().removeObject(this);
         } else {

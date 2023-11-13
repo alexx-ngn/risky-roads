@@ -23,7 +23,6 @@ public class river extends Actor
             getWorld().addObject(new river(),250,-50);
             timer = 150;
         }
-        
     }
     public void moveScrollingRiver()
     {
@@ -31,14 +30,14 @@ public class river extends Actor
     }
     public void spawnRateOak()
     {
-        if (Greenfoot.getRandomNumber(50)==1)
+        if (Greenfoot.getRandomNumber(100)<1 && getWorld().getObjects(Oak_log.class).size() <= 10)
         {
             getWorld().addObject(new Oak_log(), riverX-250, riverY);
         }
     }
     public void spawnRateBirch()
     {
-        if (Greenfoot.getRandomNumber(50)==1)
+        if (Greenfoot.getRandomNumber(100)<1 && getWorld().getObjects(Birch_log.class).size() <= 10)
         {
             getWorld().addObject(new Birch_log(),riverX-250, riverY);
         }

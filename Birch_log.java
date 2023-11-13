@@ -10,7 +10,7 @@ public class Birch_log extends Actor
             getWorld().removeObject(wombat);
             
         }
-        if (isAtEdge()){
+        if (getX() == getWorld().getWidth()-1 || getY() == getWorld().getHeight()-1){
             getWorld().removeObject(this);
         } else {
             move(1);
