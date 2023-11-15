@@ -6,19 +6,31 @@ public class MyWorld extends World
 {
     public static int imageCount = 0;
     public static GreenfootImage bgImage = new GreenfootImage("lvl1.png");
+    public static int moveDirection = Greenfoot.getRandomNumber(1);
+    public static int direction;
+    public static int logPositionX;
     
     // Values holding river coordinates
     public int riverX;
     public int riverY;
-
+    
     public void act() 
     {
         imageCount -= 1; //(or any other value; small -> slow moving, big -> fast movement)
         drawBackgroundImage();
+        int direction;
+        
+        if (MyWorld.moveDirection == 0) {
+            direction = 1;
+            logPositionX = riverX-250;
+        } else {
+            direction = -1;
+            logPositionX = riverX+250;
+        }
         
         //Updates river coordinates
-        riverX = (((river) getObjects(river.class).get(river.riverCount)).getX());
-        riverY = (((river) getObjects(river.class).get(river.riverCount)).getY());
+        riverX = getObjects(river.class).get(river.riverCount).getX();
+        riverY = getObjects(river.class).get(river.riverCount).getY(); 
     }
     public void drawBackgroundImage() 
     {
@@ -37,6 +49,7 @@ public class MyWorld extends World
     }
     private void prepare()
     {
+        setPaintOrder(test.class, Oak_log.class, Birch_log.class, river.class);
         test test = new test();
         addObject(test,0,0);
         test.setLocation(256,425);

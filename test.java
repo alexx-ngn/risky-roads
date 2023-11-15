@@ -13,7 +13,6 @@ public class test extends Actor
         } else {
             moveScrollingWombat();
         }
-
         if("up".equals(key) || ("w".equals(key))){
             setLocation(getX(),getY()-tileMovement);
         }

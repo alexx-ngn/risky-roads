@@ -5,16 +5,21 @@ public class Oak_log extends Actor
     public void act()
     {
         Actor wombat = getOneIntersectingObject(test.class);
+        if (MyWorld.moveDirection == 0) {
+            MyWorld.direction = 1;   
+        } else {
+            MyWorld.direction = -1;
+        }
         if (wombat != null)
         {
             getWorld().removeObject(wombat);
             Greenfoot.stop();
         }
-        if (getX() == getWorld().getWidth()-1 || getY() == getWorld().getHeight()-1) 
+        if (getY() == getWorld().getHeight()-1) 
         {
             getWorld().removeObject(this);
         } else {
-            move(1);
+            move(MyWorld.direction);
             moveScrollingLog();
         }
     }
