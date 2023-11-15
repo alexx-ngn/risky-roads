@@ -6,7 +6,9 @@ public class test extends Actor
         String key = Greenfoot.getKey();
         int tileMovement = 50;
         //Remove wombat if at edge
-        if (isAtEdge())
+        if (getY() == getWorld().getHeight()-1 || 
+            getX() == getWorld().getWidth()-1 || 
+            getX() == getWorld().getWidth()-500)
         {
             getWorld().removeObject(this);
             Greenfoot.stop();
