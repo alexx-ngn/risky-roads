@@ -8,12 +8,13 @@ public class Birch_log extends Actor
         if (wombat != null)
         {
             getWorld().removeObject(wombat);
-            
+            Greenfoot.stop();
         }
-        if (getX() == getWorld().getWidth()-1 || getY() == getWorld().getHeight()-1){
+        if (getY() == getWorld().getHeight()-1)
+        {
             getWorld().removeObject(this);
         } else {
-            move(1);
+            move(MyWorld.direction);
             moveScrollingLog();
         }
     }
