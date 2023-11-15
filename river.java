@@ -3,8 +3,8 @@ public class river extends Actor
 {
     public static int riverCount = 0;
     private int timer = 150;
-    public int riverX;
-    public int riverY;
+    public static int riverX;
+    public static int riverY;
     private int birchOrOak = Greenfoot.getRandomNumber(2); //50% chance of spawning birch or oak logs
     public void act()
     {
@@ -35,6 +35,7 @@ public class river extends Actor
         if (Greenfoot.getRandomNumber(100) <= 1 && numOakLogs <= 10)
         {
             getWorld().addObject(new Oak_log(), MyWorld.logPositionX, riverY);
+            getWorld().addObject(new placeholder(), MyWorld.logPositionX, riverY);
         }
     }
     public void spawnRateBirch()
@@ -43,6 +44,7 @@ public class river extends Actor
         if (Greenfoot.getRandomNumber(100) <= 1 && numBirchLogs <= 10)
         {
             getWorld().addObject(new Birch_log(),MyWorld.logPositionX, riverY);
+            getWorld().addObject(new placeholder(), MyWorld.logPositionX, riverY);
         }
     }
 }

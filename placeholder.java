@@ -1,6 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Birch_log extends Actor
+/**
+ * Write a description of class placeholder here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class placeholder extends Actor
 {
     public void act()
     {
@@ -10,15 +16,15 @@ public class Birch_log extends Actor
         //    getWorld().removeObject(wombat);
         //    Greenfoot.stop();
         //}
-        if (getY() == getWorld().getHeight()-1)
+        if (getY() == getWorld().getHeight()-1) 
         {
             getWorld().removeObject(this);
         } else {
             move(MyWorld.direction);
-            moveScrollingLog();
+            moveScrolling();
         }
     }
-    public void moveScrollingLog()
+    public void moveScrolling()
     {
         setLocation(getX(),getY()+1);
     }
