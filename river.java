@@ -32,7 +32,7 @@ public class river extends Actor
     public void spawnRateOak()
     {
         int numOakLogs = getWorld().getObjects(Oak_log.class).size();
-        if (Greenfoot.getRandomNumber(200) <= 1 && numOakLogs <= 10)
+        if (Greenfoot.getRandomNumber(100) <= 1 && numOakLogs <= 10)
         {
             getWorld().addObject(new Oak_log(), MyWorld.logPositionX, riverY);
         }
@@ -40,7 +40,7 @@ public class river extends Actor
     public void spawnRateBirch()
     {
         int numBirchLogs = getWorld().getObjects(Birch_log.class).size();
-        if (Greenfoot.getRandomNumber(200) <= 1 && numBirchLogs <= 10)
+        if (Greenfoot.getRandomNumber(100) <= 1 && numBirchLogs <= 10)
         {
             getWorld().addObject(new Birch_log(),MyWorld.logPositionX, riverY);
         }

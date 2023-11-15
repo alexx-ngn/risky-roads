@@ -18,7 +18,6 @@ public class MyWorld extends World
     {
         imageCount -= 1; //(or any other value; small -> slow moving, big -> fast movement)
         drawBackgroundImage();
-        int direction;
         
         if (MyWorld.moveDirection == 0) {
             direction = 1;
