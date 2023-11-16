@@ -23,13 +23,13 @@ public class SplashScreen extends World
     
     public void act()
     {
-     int timerValue = (int) (System.currentTimeMillis() - timeWelcomeScreenCreation)/1000; 
+        int timerValue = (int) (System.currentTimeMillis() - timeWelcomeScreenCreation)/1000; 
      
-     Greenfoot.playSound("SplashScreenIntro.wav");
+        Greenfoot.playSound("SplashScreenIntro.wav");
      
-     if (System.currentTimeMillis() >= (timeWelcomeScreenCreation + (3 * 1000)))
-     {
-         Greenfoot.setWorld(new MainMenu());
-     }
+        if (System.currentTimeMillis() >= (timeWelcomeScreenCreation + (3 * 1000)))
+        {
+            Greenfoot.setWorld(new MainMenu());
+        }
     }
 }

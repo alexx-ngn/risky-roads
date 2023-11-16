@@ -29,7 +29,7 @@ public class test extends Actor
             getX() == getWorld().getWidth()-500)
         {
             getWorld().removeObject(this);
-            Greenfoot.stop();
+            Greenfoot.setWorld(new GameOverWorld());
         } else {
             moveScrollingWombat();
         }
