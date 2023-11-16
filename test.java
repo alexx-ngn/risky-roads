@@ -5,7 +5,7 @@ public class test extends Actor
     public static int wombatY;
     public void act()
     {
-        boolean invicible = false;
+        boolean invincible = false;
         boolean alignedOak = true;
         movementWombat();
         Actor oak = getOneIntersectingObject(Oak_log.class);
@@ -13,7 +13,7 @@ public class test extends Actor
         Actor river = getOneIntersectingObject(river.class);
         Actor placeholder = getOneIntersectingObject(placeholder.class);
         if (river != null && placeholder != null) {
-            invicible = true;
+            invincible = true;
             move(MyWorld.direction);
             if (placeholder != null && birch != null)
             {
@@ -31,7 +31,7 @@ public class test extends Actor
                 while(alignedOak);
             }
         }
-        if (river != null && invicible != true) {
+        if (river != null && invincible != true) {
             getWorld().removeObject(this);
         }
     }
@@ -46,7 +46,7 @@ public class test extends Actor
             getX() == getWorld().getWidth()-1 || 
             getX() == getWorld().getWidth()-500)
         {
-            getWorld().removeObject(this);
+            //getWorld().removeObject(this);
             Greenfoot.setWorld(new GameOverWorld());
         } else {
             moveScrollingWombat();

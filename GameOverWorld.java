@@ -24,16 +24,32 @@ public class GameOverWorld extends World
     
     public void act()
     {
-        Display display = new Display();
-        addObject(display, 250, 300);
+        Display timer = new Display();
+        addObject(timer, 250, 300);
+        
+        Display lostTitle = new Display();
+        addObject(lostTitle, 250, 50);
+        lostTitle.setImage(new GreenfootImage("You lost!!!", 60, Color.WHITE,new Color(0, 0, 0, 0), Color.BLACK));
+        
+        Display optionText = new Display();
+        addObject(optionText, 250, 80);
+        optionText.setImage(new GreenfootImage("Press spacebar to restart level.", 30, Color.WHITE,new Color(0, 0, 0, 0), Color.BLACK));
+        
+        Display mainMenu = new Display();
+        addObject(mainMenu, 250, 105);
+        mainMenu.setImage(new GreenfootImage("Press escape key to go back to main menu.", 30, Color.WHITE,new Color(0, 0, 0, 0), Color.BLACK));
         
         int timerValue = (int) (System.currentTimeMillis() - timeWelcomeScreenCreation)/1000;
         
         //Greenfoot.playSound("GameOverWorld.wav");
         
-        display.setImage(new GreenfootImage("Timer Value: " + timerValue, 35, Color.WHITE, Color.BLACK, Color.YELLOW));
-
-        if (System.currentTimeMillis() >= (timeWelcomeScreenCreation + (9 * 1000)))
+        timer.setImage(new GreenfootImage("Timer Value: " + timerValue, 35, Color.WHITE,new Color(0, 0, 0, 0), Color.BLACK));
+        
+        if (Greenfoot.isKeyDown("space"))
+        {
+            Greenfoot.setWorld(new MyWorld());
+        }
+        if (System.currentTimeMillis() >= (timeWelcomeScreenCreation + (9 * 1000)) || Greenfoot.isKeyDown("escape"))
         {
             Greenfoot.setWorld(new MainMenu());
         }
