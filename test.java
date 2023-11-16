@@ -6,12 +6,30 @@ public class test extends Actor
     public void act()
     {
         boolean invicible = false;
+        boolean alignedOak = true;
         movementWombat();
+        Actor oak = getOneIntersectingObject(Oak_log.class);
+        Actor birch = getOneIntersectingObject(Birch_log.class);
         Actor river = getOneIntersectingObject(river.class);
         Actor placeholder = getOneIntersectingObject(placeholder.class);
         if (river != null && placeholder != null) {
             invicible = true;
             move(MyWorld.direction);
+            if (placeholder != null && birch != null)
+            {
+                do {
+                   setLocation(birch.getX(), birch.getY()-25);
+                   alignedOak = false; 
+                }
+                while(alignedOak);
+            }
+            else {
+                do {
+                   setLocation(oak.getX(), oak.getY()-25);
+                   alignedOak = false; 
+                }
+                while(alignedOak);
+            }
         }
         if (river != null && invicible != true) {
             getWorld().removeObject(this);
@@ -20,8 +38,8 @@ public class test extends Actor
     public void movementWombat(){
         String key = Greenfoot.getKey();
         int tileMovement = 50;
-        wombatX = getX();
-        wombatY = getY();
+        wombatX = this.getX();
+        wombatY = this.getY();
         
         //Remove wombat if at edge
         if (getY() == getWorld().getHeight()-1 || 

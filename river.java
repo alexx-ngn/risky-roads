@@ -2,7 +2,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class river extends Actor
 {
     public static int riverCount = 0;
-    private int timer = 150;
     public static int riverX;
     public static int riverY;
     private int birchOrOak = Greenfoot.getRandomNumber(2); //50% chance of spawning birch or oak logs

@@ -20,7 +20,7 @@ public class Button_Start extends Actor
         }
         if (Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new frostLevel());
+            Greenfoot.setWorld(new MyWorld());
         }
         if (Greenfoot.mouseMoved(getWorld()))
         {
