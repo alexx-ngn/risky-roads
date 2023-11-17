@@ -1,6 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Oak_log extends Actor
+public class oakLog extends Actor
 {
     public void act()
     {

@@ -1,41 +1,37 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-public class test extends Actor
+public class wombat extends Actor
 {
     public static int wombatX;
     public static int wombatY;
     public void act()
     {
         boolean invincible = false;
-        boolean alignedOak = true;
         movementWombat();
-        Actor oak = getOneIntersectingObject(Oak_log.class);
-        Actor birch = getOneIntersectingObject(Birch_log.class);
+        Actor oak = getOneIntersectingObject(oakLog.class);
+        Actor birch = getOneIntersectingObject(birchLog.class);
         Actor river = getOneIntersectingObject(river.class);
         Actor placeholder = getOneIntersectingObject(placeholder.class);
+        Actor blueCar = getOneIntersectingObject(blueCar.class);
         if (river != null && placeholder != null) {
             invincible = true;
             move(MyWorld.direction);
             if (placeholder != null && birch != null)
             {
-                do {
-                   setLocation(birch.getX(), birch.getY()-25);
-                   alignedOak = false; 
-                }
-                while(alignedOak);
+                setLocation(birch.getX(), birch.getY()-25);
             }
             else {
-                do {
-                   setLocation(oak.getX(), oak.getY()-25);
-                   alignedOak = false; 
-                }
-                while(alignedOak);
+                setLocation(oak.getX(), oak.getY()-25);
             }
         }
         if (river != null && invincible != true) {
-            getWorld().removeObject(this);
+            Greenfoot.setWorld(new GameOverWorld());
+        }
+        if (blueCar != null) {
+            Greenfoot.setWorld(new GameOverWorld());
         }
     }
-    public void movementWombat(){
+    public void movementWombat()
+    {
         String key = Greenfoot.getKey();
         int tileMovement = 50;
         wombatX = this.getX();

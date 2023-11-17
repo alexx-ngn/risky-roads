@@ -1,6 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Birch_log extends Actor
+public class birchLog extends Actor
 {
     public void act()
     {

@@ -5,8 +5,10 @@ public class river extends Actor
     public static int riverX;
     public static int riverY;
     private int birchOrOak = Greenfoot.getRandomNumber(2); //50% chance of spawning birch or oak logs
+    public int timer = 0;
     public void act()
     {
+        timer++;
         riverX = getX();
         riverY = getY();
         if (getY() == getWorld().getHeight()-1)
@@ -30,20 +32,22 @@ public class river extends Actor
     }
     public void spawnRateOak()
     {
-        int numOakLogs = getWorld().getObjects(Oak_log.class).size();
-        if (Greenfoot.getRandomNumber(100) <= 1 && numOakLogs <= 10)
+        int numOakLogs = getWorld().getObjects(oakLog.class).size();
+        if (Greenfoot.getRandomNumber(100) <= 1 && numOakLogs <= 10 && timer >= 100)
         {
-            getWorld().addObject(new Oak_log(), MyWorld.logPositionX, riverY);
+            getWorld().addObject(new oakLog(), MyWorld.logPositionX, riverY);
             getWorld().addObject(new placeholder(), MyWorld.logPositionX, riverY);
+            timer = 0;
         }
     }
     public void spawnRateBirch()
     {
-        int numBirchLogs = getWorld().getObjects(Birch_log.class).size();
-        if (Greenfoot.getRandomNumber(100) <= 1 && numBirchLogs <= 10)
+        int numBirchLogs = getWorld().getObjects(birchLog.class).size();
+        if (Greenfoot.getRandomNumber(100) <= 1 && numBirchLogs <= 10 && timer >= 100)
         {
-            getWorld().addObject(new Birch_log(),MyWorld.logPositionX, riverY);
+            getWorld().addObject(new birchLog(),MyWorld.logPositionX, riverY);
             getWorld().addObject(new placeholder(), MyWorld.logPositionX, riverY);
+            timer = 0;
         }
     }
 }

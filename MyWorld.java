@@ -9,6 +9,7 @@ public class MyWorld extends World
     public static int moveDirection = Greenfoot.getRandomNumber(1);
     public static int direction;
     public static int logPositionX;
+    public static int blueCarPositionX;
     
     // Values holding river coordinates
     //public int riverX;
@@ -29,7 +30,10 @@ public class MyWorld extends World
         
         //Updates river coordinates
         river.riverX = getObjects(river.class).get(river.riverCount).getX();
-        river.riverY = getObjects(river.class).get(river.riverCount).getY(); 
+        river.riverY = getObjects(river.class).get(river.riverCount).getY();
+        
+        //Updates road coordinates
+        road.roadX = getObjects(road.class).get(road.roadCount).getX();
     }
     public void drawBackgroundImage() 
     {
@@ -49,11 +53,14 @@ public class MyWorld extends World
     
     private void prepare()
     {
-        setPaintOrder(test.class, Oak_log.class, Birch_log.class, placeholder.class, river.class);
-        test test = new test();
-        addObject(test,0,0);
-        test.setLocation(250,425);
+        setPaintOrder(wombat.class, blueCar.class, road.class, oakLog.class, birchLog.class, placeholder.class, river.class);
+        wombat wombat = new wombat();
+        addObject(wombat,0,0);
+        wombat.setLocation(250,425);
         river river = new river();
         addObject(river,250,100);
+        
+        road road = new road();
+        addObject(road,250,300);
     }
 }
