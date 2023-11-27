@@ -43,7 +43,7 @@ public class GameOverWorld extends World
         
         //Greenfoot.playSound("GameOverWorld.wav");
         
-        timer.setImage(new GreenfootImage("Timer Value: " + timerValue, 35, Color.WHITE,new Color(0, 0, 0, 0), Color.BLACK));
+        timer.setImage(new GreenfootImage("Timer Value: " + MyWorld.timer / 60, 35, Color.WHITE,new Color(0, 0, 0, 0), Color.BLACK));
         
         if (Greenfoot.isKeyDown("space"))
         {

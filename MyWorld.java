@@ -35,6 +35,11 @@ public class MyWorld extends World
         
         //Updates road coordinates
         road.roadX = getObjects(road.class).get(road.roadCount).getX();
+        
+        if (timer == 30*60) {
+            grassPortal grassPortal = new grassPortal();
+            addObject(grassPortal,getWidth()/2,25);
+        }
     }
     public void drawBackgroundImage() 
     {
@@ -50,6 +55,7 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(500, 500, 1);
         prepare();
+        timer = 0;
     }
     
     private void prepare()
@@ -59,9 +65,9 @@ public class MyWorld extends World
         addObject(wombat,0,0);
         wombat.setLocation(250,425);
         river river = new river();
-        addObject(river,getWidth()/2,100);
-        
+        addObject(river,getWidth()/2,123);
+
         road road = new road();
-        addObject(road,getWidth()/2,350);
+        addObject(road,getWidth()/2,323);
     }
 }
