@@ -44,9 +44,14 @@ public class wombat extends Actor
         {
             //getWorld().removeObject(this);
             Greenfoot.setWorld(new GameOverWorld());
-        } else {
+        }
+        
+        //Moves wombat until 30 seconds have passed
+        if (MyWorld.timer <= 60*30) {
             moveScrollingWombat();
         }
+        
+        // Controls for wombat
         if("up".equals(key) || ("w".equals(key))){
             setLocation(getX(),getY()-tileMovement);
         }

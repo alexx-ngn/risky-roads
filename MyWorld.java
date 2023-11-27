@@ -10,15 +10,16 @@ public class MyWorld extends World
     public static int direction;
     public static int logPositionX;
     public static int blueCarPositionX;
-    
-    // Values holding river coordinates
-    //public int riverX;
-    //public int riverY;
+    public static int timer = 0;
     
     public void act() 
     {
-        imageCount -= 1; //(or any other value; small -> slow moving, big -> fast movement)
-        drawBackgroundImage();
+        timer++;
+        //Image scroller, when it reaches 30 seconds it will stop
+        if (timer <= 30*60) {
+            imageCount -= 1; //(or any other value; small -> slow moving, big -> fast movement)
+            drawBackgroundImage();
+        }
         
         if (MyWorld.moveDirection == 0) {
             direction = 1;
@@ -58,9 +59,9 @@ public class MyWorld extends World
         addObject(wombat,0,0);
         wombat.setLocation(250,425);
         river river = new river();
-        addObject(river,250,100);
+        addObject(river,getWidth()/2,100);
         
         road road = new road();
-        addObject(road,250,300);
+        addObject(road,getWidth()/2,350);
     }
 }

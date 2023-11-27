@@ -17,7 +17,7 @@ public class river extends Actor
             getWorld().removeObject(this);
             MyWorld.moveDirection = Greenfoot.getRandomNumber(2);
             //riverCount++;
-        } else {
+        } else if (MyWorld.timer <= 60*30) {
             moveScrollingRiver();
             if (birchOrOak < 1) {
                 spawnRateOak();

@@ -12,15 +12,18 @@ public class road extends Actor
         timer++;
         roadX = getX();
         roadY = getY();
-        if (getY() == getWorld().getHeight()-1)
-        {
-            getWorld().addObject(new road(),250,0);
-            getWorld().removeObject(this);
-            //MyWorld.moveDirection = Greenfoot.getRandomNumber(2);
-            //riverCount++;
-        } else {
-            moveScrollingRoad();
-            spawnBlueCar();
+        
+        if (MyWorld.timer <= 60*30) {
+            if (getY() == getWorld().getHeight()-1)
+            {
+                getWorld().addObject(new road(),250,0);
+                getWorld().removeObject(this);
+                //MyWorld.moveDirection = Greenfoot.getRandomNumber(2);
+                //riverCount++;
+            } else {
+                moveScrollingRoad();
+                spawnBlueCar();
+            }
         }
     }
     public void moveScrollingRoad()

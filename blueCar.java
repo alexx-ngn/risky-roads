@@ -14,13 +14,16 @@ public class blueCar extends Actor
      */
     public void act()
     {
-        if (getY() == getWorld().getHeight()-1 || getX() == getWorld().getWidth()-getImage().getWidth())
-        {
-            getWorld().removeObject(this);
-        } else {
-            move(2);
+        //Stops scrolling down after 30 seconds
+        if (MyWorld.timer <= 60*30) {
+            // When it reaches the right side of the world, it gets deleted.
+            // Else, it moves to the right and scrolls down.
             moveScrollingBlueCar();
         }
+        if (getY() == getWorld().getHeight()-1 || getX() == getWorld().getWidth()-getImage().getWidth()) {
+            getWorld().removeObject(this);
+        }
+        move(2);
     }
     public void moveScrollingBlueCar()
     {

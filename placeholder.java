@@ -10,18 +10,14 @@ public class placeholder extends Actor
 {
     public void act()
     {
-        //Actor wombat = getOneIntersectingObject(test.class);
-        //if (wombat != null)
-        //{
-        //    getWorld().removeObject(wombat);
-        //    Greenfoot.stop();
-        //}
-        if (getY() == getWorld().getHeight()-1) 
-        {
-            getWorld().removeObject(this);
-        } else {
-            move(MyWorld.direction);
-            moveScrolling();
+        // Stops everything after 30 seconds
+        if (MyWorld.timer <= 30*60) {
+            if (getY() == getWorld().getHeight()-1) {
+                getWorld().removeObject(this);
+            } else {
+                move(MyWorld.direction);
+                moveScrolling();
+            } 
         }
     }
     public void moveScrolling()
