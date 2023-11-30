@@ -54,7 +54,7 @@ public class wombat extends Actor
     }
     public void enterFrost()
     {
-        Actor portal = getOneIntersectingObject(grassPortal.class);
+        Actor portal = getOneIntersectingObject(frostPortal.class);
         if(portal != null)
         {
             //invincible = true;

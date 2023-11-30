@@ -37,7 +37,7 @@ public class MyWorld extends World
         road.roadX = getObjects(road.class).get(road.roadCount).getX();
         
         if (timer == 30*60) {
-            grassPortal grassPortal = new grassPortal();
+            frostPortal grassPortal = new frostPortal();
             addObject(grassPortal,getWidth()/2,25);
         }
     }
