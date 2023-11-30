@@ -16,6 +16,6 @@ public class frostLevel extends World
     public frostLevel()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(75, 75, 10); 
+        super(500, 500, 1); 
     }
 }

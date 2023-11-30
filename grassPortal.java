@@ -14,6 +14,7 @@ public class grassPortal extends Actor
      */
     public void act()
     {
-        
+        //Actor wombat = getOneIntersectingObject(wombat.class);
+        turn(4);
     }
 }
