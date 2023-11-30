@@ -13,7 +13,7 @@ public class wombat extends Actor
         Actor river = getOneIntersectingObject(river.class);
         Actor placeholder = getOneIntersectingObject(placeholder.class);
         Actor blueCar = getOneIntersectingObject(blueCar.class);
-        Actor portal = getOneIntersectingObject(grassPortal.class);
+        Actor portal = getOneIntersectingObject(frostPortal.class);
         if (river != null && placeholder != null) {
             invincible = true;
             move(MyWorld.direction);

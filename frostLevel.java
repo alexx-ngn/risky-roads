@@ -17,5 +17,17 @@ public class frostLevel extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(500, 500, 1); 
+        prepare();
+    }
+    
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        frostRiver frostRiver = new frostRiver();
+        addObject(frostRiver,250,250);
+        frostRiver.setLocation(250,220);
     }
 }

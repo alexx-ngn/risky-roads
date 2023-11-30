@@ -1,20 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class grassPortal here.
+ * Write a description of class frostRiver here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class grassPortal extends Actor
+public class frostRiver extends Actor
 {
     /**
-     * Act - do whatever the grassPortal wants to do. This method is called whenever
+     * Act - do whatever the frostRiver wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        //Actor wombat = getOneIntersectingObject(wombat.class);
-        turn(4);
+        // Add your action code here.
     }
 }
