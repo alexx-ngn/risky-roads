@@ -10,57 +10,6 @@ public class wombat extends Actor
         carGameOver();
         movementWombat();
         enterFrost();
-        Actor oak = getOneIntersectingObject(oakLog.class);
-        Actor birch = getOneIntersectingObject(birchLog.class);
-        Actor river = getOneIntersectingObject(river.class);
-        Actor placeholder = getOneIntersectingObject(placeholder.class);
-        Actor blueCar = getOneIntersectingObject(blueCar.class);
-        Actor portal = getOneIntersectingObject(frostPortal.class);
-        if (river != null && placeholder != null) {
-            invincible = true;
-            move(MyWorld.direction);
-            if (placeholder != null && birch != null)
-            {
-                setLocation(birch.getX(), birch.getY()-25);
-            }
-            else {
-                setLocation(oak.getX(), oak.getY()-25);
-            }
-        }
-        if(portal != null)
-        {
-            //invincible = true;
-            int timer = 0;
-            int width = img.getWidth();
-            int height = img.getHeight();
-            if (width == 2 || height == 2) {
-                Greenfoot.setWorld(new frostLevel());
-            }
-            if ((width >= 2 || height >= 2) && timer % 60 == 0 ) {
-                setLocation(portal.getX(), portal.getY());
-                turn(4);
-                img.scale(width/2, height/2);
-                setImage(img);
-            }
-            timer++;
-            //getWorld().removeObject(this);
-            //if (timer == 45) {
-            //    setImage("wombatHalf.png");
-            //} else if (timer == 90) {
-            //    setImage("wombatHalfOfAHalf.png");
-            //} else if (timer == 135) {
-            //    setImage("wombatSmol.png");
-            //} else if (timer == 180) {
-            //    setImage("wombatSuperSmol.png");
-            //}
-        }
-        if (river != null && invincible != true) {
-            Greenfoot.setWorld(new GameOverWorld());
-        }
-        if (blueCar != null) {
-            Greenfoot.setWorld(new GameOverWorld());
-        }
-
     }
     public void movementWombat()
     {
