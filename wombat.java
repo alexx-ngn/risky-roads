@@ -3,6 +3,7 @@ public class wombat extends Actor
 {
     public static int wombatX;
     public static int wombatY;
+    public static int currentLevel;
     public GreenfootImage img = new GreenfootImage("wombat.png");
     public void act()
     {
@@ -28,7 +29,7 @@ public class wombat extends Actor
         }
         
         //Moves wombat until 30 seconds have passed
-        if (MyWorld.timer <= 60*30) {
+        if (MyWorld.timer <= 60*30 || frostLevel.timer <= 60*30) {
             moveScrollingWombat();
         }
         
@@ -92,6 +93,13 @@ public class wombat extends Actor
             }
         }
         if (river != null && invincible != true) {
+            Greenfoot.setWorld(new GameOverWorld());
+        }
+    }
+    public void onIce() {
+        Actor frostRiver = getOneIntersectingObject(frostRiver.class);
+        Actor ice = getOneIntersectingObject(icePlatform.class);
+        if (frostRiver != null) {
             Greenfoot.setWorld(new GameOverWorld());
         }
     }

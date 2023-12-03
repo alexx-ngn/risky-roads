@@ -8,16 +8,35 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class frostLevel extends World
 {
-
-    /**
-     * Constructor for objects of class frostLevel.
-     * 
-     */
+    public static int imageCount = 0;
+    public static GreenfootImage bgImage = new GreenfootImage("frostLevel.png");
+    public static int moveDirection = Greenfoot.getRandomNumber(1);
+    public static int direction;
+    public static int timer = 0;
+    
     public frostLevel()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(500, 500, 1); 
         prepare();
+        wombat.currentLevel = 1;
+    }
+    public void act() 
+    {
+        timer++;
+        //Image scroller, when it reaches 30 seconds it will stop
+        if (timer <= 30*60) {
+            imageCount -= 1; //(or any other value; small -> slow moving, big -> fast movement)
+            drawBackgroundImage();
+        }
+    }
+    public void drawBackgroundImage() 
+    {
+        if (imageCount < -bgImage.getWidth()) {
+            imageCount += bgImage.getWidth();
+        }
+        int temp = -imageCount;
+        getBackground().drawImage(bgImage, 0, temp);
+        getBackground().drawImage(bgImage, 0, temp - bgImage.getWidth());
     }
     
     /**
@@ -26,8 +45,10 @@ public class frostLevel extends World
      */
     private void prepare()
     {
+        setPaintOrder(wombat.class, frostRiver.class);
         frostRiver frostRiver = new frostRiver();
-        addObject(frostRiver,250,250);
-        frostRiver.setLocation(250,220);
+        wombat wombat = new wombat();
+        addObject(wombat,250,380);
+        addObject(frostRiver,250,130);
     }
 }

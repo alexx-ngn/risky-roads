@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameOverWorld extends World
 {
-    
     double timeWelcomeScreenCreation = System.currentTimeMillis();
     
     /**
@@ -47,7 +46,16 @@ public class GameOverWorld extends World
         
         if (Greenfoot.isKeyDown("space"))
         {
-            Greenfoot.setWorld(new MyWorld());
+            switch (wombat.currentLevel){
+                case 0: {
+                    Greenfoot.setWorld(new MyWorld());
+                    break;
+                }
+                case 1: {
+                    Greenfoot.setWorld(new frostLevel());
+                    break;
+                }
+            }
         }
         if (System.currentTimeMillis() >= (timeWelcomeScreenCreation + (9 * 1000)) || Greenfoot.isKeyDown("escape"))
         {
