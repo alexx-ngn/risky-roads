@@ -15,7 +15,7 @@ public class blueCar extends Actor
     public void act()
     {
         //Stops scrolling down after 30 seconds
-        if (MyWorld.timer <= 60*30) {
+        if (wombat.worldTimer <= 60*30) {
             // When it reaches the right side of the world, it gets deleted.
             // Else, it moves to the right and scrolls down.
             moveScrollingBlueCar();

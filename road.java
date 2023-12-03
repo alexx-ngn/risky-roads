@@ -13,7 +13,7 @@ public class road extends Actor
         roadX = getX();
         roadY = getY();
         
-        if (MyWorld.timer <= 60*30) {
+        if (wombat.worldTimer <= 60*30) {
             if (getY() == getWorld().getHeight()-1)
             {
                 getWorld().addObject(new road(),250,0);

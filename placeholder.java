@@ -11,7 +11,7 @@ public class placeholder extends Actor
     public void act()
     {
         // Stops everything after 30 seconds
-        if (MyWorld.timer <= 30*60) {
+        if (wombat.worldTimer <= 30*60) {
             if (getY() == getWorld().getHeight()-1) {
                 getWorld().removeObject(this);
             } else {

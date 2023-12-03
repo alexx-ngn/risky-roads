@@ -13,21 +13,24 @@ public class frostLevel extends World
     public static int moveDirection = Greenfoot.getRandomNumber(1);
     public static int direction;
     public static int timer = 0;
+    public static int icePositionX;
     
     public frostLevel()
     {    
         super(500, 500, 1); 
         prepare();
         wombat.currentLevel = 1;
+        wombat.worldTimer = 0;
     }
     public void act() 
     {
-        timer++;
+        wombat.worldTimer++;
         //Image scroller, when it reaches 30 seconds it will stop
-        if (timer <= 30*60) {
+        if (wombat.worldTimer <= 30*60) {
             imageCount -= 1; //(or any other value; small -> slow moving, big -> fast movement)
             drawBackgroundImage();
         }
+        icePositionX = frostRiver.riverX-250;
     }
     public void drawBackgroundImage() 
     {

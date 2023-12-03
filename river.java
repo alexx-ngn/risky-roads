@@ -5,7 +5,7 @@ public class river extends Actor
     public static int riverX;
     public static int riverY;
     private int birchOrOak = Greenfoot.getRandomNumber(2); //50% chance of spawning birch or oak logs
-    public int timer = 0;
+    private int timer = 0;
     public void act()
     {
         timer++;
@@ -16,8 +16,8 @@ public class river extends Actor
             getWorld().addObject(new river(),250,0);
             getWorld().removeObject(this);
             MyWorld.moveDirection = Greenfoot.getRandomNumber(2);
-            //riverCount++;
-        } else if (MyWorld.timer <= 60*30) {
+        }
+        if (wombat.worldTimer <= 60*30) {
             moveScrollingRiver();
             if (birchOrOak < 1) {
                 spawnRateOak();
