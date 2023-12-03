@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MainMenu extends World
 {
+    private boolean soundHasPlayed = false;
+    private GreenfootSound mySound = new GreenfootSound("MainMenu_Background_Music.wav");
     /**
      * Constructor for objects of class menu.
      * 
@@ -24,11 +26,18 @@ public class MainMenu extends World
      */
     private void prepare()
     {
+        Greenfoot.playSound("MainMenu_Background_Music.wav");
+        
         Button_Exit button_Exit = new Button_Exit();
         addObject(button_Exit,250,330);
+        button_Exit.setLocation(250,330);
+        
         Button_Start button_Start = new Button_Start();
         addObject(button_Start,250,280);
-        button_Exit.setLocation(250,330);
         button_Start.setLocation(250,280);
+        
+        Button_Settings button_Settings = new Button_Settings();
+        addObject(button_Settings,250,280);
+        button_Settings.setLocation(425,475);
     }
 }
