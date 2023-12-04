@@ -29,16 +29,16 @@ public class frostRiver extends Actor
     }
     public void spawnIce() {
         int numIce = getWorld().getObjects(icePlatform.class).size();
-        if (Greenfoot.getRandomNumber(30) <= 1 && numIce <= 10 && timer >= 75)
+        if (Greenfoot.getRandomNumber(100) <= 20 && numIce <= 10 && timer >= 75)
         {
-            getWorld().addObject(new icePlatform(), frostLevel.icePositionX, riverY+20);
-            getWorld().addObject(new placeholder(), frostLevel.icePositionX, riverY+20);
+            getWorld().addObject(new icePlatform(), frostLevel.icePositionX, riverY+25);
+            getWorld().addObject(new placeholder(), frostLevel.icePositionX, riverY+30);
             timer = 0;
         }
-        if (Greenfoot.getRandomNumber(30) <= 1 && numIce <= 10 && timer >= 75)
+        if (Greenfoot.getRandomNumber(100) <= 20 && numIce <= 10 && timer >= 75)
         {
             getWorld().addObject(new icePlatformRight(), frostLevel.icePositionX+500, riverY-25);
-            getWorld().addObject(new placeholder(), frostLevel.icePositionX+500, riverY-25);
+            getWorld().addObject(new placeholder(), frostLevel.icePositionX+500, riverY-30);
             timer = 0;
         }
     }

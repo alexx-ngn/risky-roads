@@ -16,11 +16,13 @@ public class icePlatform extends Actor
             if (getY() == getWorld().getHeight()-1) {
                 getWorld().removeObject(this);
             }
+        } else {
+            moveScrollingIce();
         }
         if (wombat.worldTimer >= 60*30 && isAtEdge()) {
             getWorld().removeObject(this);
         } else {
-            move(1);
+            move(2);
         }
     }
     public void moveScrollingIce()

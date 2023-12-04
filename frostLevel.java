@@ -48,7 +48,7 @@ public class frostLevel extends World
      */
     private void prepare()
     {
-        setPaintOrder(wombat.class,icePlatform.class,icePlatformRight.class,frostRiver.class);
+        setPaintOrder(wombat.class,placeholder.class,icePlatform.class,icePlatformRight.class,frostRiver.class);
         frostRiver frostRiver = new frostRiver();
         wombat wombat = new wombat();
         addObject(wombat,250,380);

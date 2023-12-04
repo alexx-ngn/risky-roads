@@ -13,6 +13,8 @@ public class wombat extends Actor
         carGameOver();
         movementWombat();
         enterFrost();
+        onIceRight();
+        onIce();
     }
     public void movementWombat()
     {
@@ -99,9 +101,38 @@ public class wombat extends Actor
         }
     }
     public void onIce() {
+        boolean invincible = false;
         Actor frostRiver = getOneIntersectingObject(frostRiver.class);
         Actor ice = getOneIntersectingObject(icePlatform.class);
-        if (frostRiver != null) {
+        Actor iceRight = getOneIntersectingObject(icePlatformRight.class);
+        Actor placeholder = getOneIntersectingObject(placeholder.class);
+        if (frostRiver != null && placeholder != null) {
+            invincible = true;
+            move(1);
+            if (placeholder != null && ice != null)
+            {
+                setLocation(ice.getX(), ice.getY());
+            }
+        }
+        if (frostRiver != null && invincible != true) {
+            Greenfoot.setWorld(new GameOverWorld());
+        }
+    }
+    public void onIceRight() {
+        boolean invincible = false;
+        Actor frostRiver = getOneIntersectingObject(frostRiver.class);
+        Actor ice = getOneIntersectingObject(icePlatform.class);
+        Actor iceRight = getOneIntersectingObject(icePlatformRight.class);
+        Actor placeholder = getOneIntersectingObject(placeholder.class);
+        if (frostRiver != null && placeholder != null) {
+            invincible = true;
+            move(1);
+            if (placeholder != null && iceRight != null)
+            {
+                setLocation(iceRight.getX(), iceRight.getY());
+            }
+        }
+        if (frostRiver != null && invincible != true) {
             Greenfoot.setWorld(new GameOverWorld());
         }
     }
