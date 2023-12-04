@@ -5,6 +5,7 @@ public class wombat extends Actor
     public static int wombatY;
     public static int currentLevel;
     public static int worldTimer = 0;
+    public static int moveDirection = Greenfoot.getRandomNumber(1);
     public GreenfootImage img = new GreenfootImage("wombat.png");
     public void act()
     {

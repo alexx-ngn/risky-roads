@@ -16,8 +16,7 @@ public class river extends Actor
             getWorld().addObject(new river(),250,0);
             getWorld().removeObject(this);
             MyWorld.moveDirection = Greenfoot.getRandomNumber(2);
-        }
-        if (wombat.worldTimer <= 60*30) {
+        }else if (wombat.worldTimer <= 60*30) {
             moveScrollingRiver();
             if (birchOrOak < 1) {
                 spawnRateOak();

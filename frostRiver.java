@@ -16,11 +16,12 @@ public class frostRiver extends Actor
         {
             getWorld().addObject(new frostRiver(),250,0);
             getWorld().removeObject(this);
-            MyWorld.moveDirection = Greenfoot.getRandomNumber(2);
-        }
-        if (wombat.worldTimer <= 60*30) {
+            //MyWorld.moveDirection = Greenfoot.getRandomNumber(2);
+        }else if (wombat.worldTimer <= 60*30) {
             moveScrollingRiver();
+            spawnIce();
         }
+        timer++;
     }
     public void moveScrollingRiver()
     {
@@ -28,10 +29,16 @@ public class frostRiver extends Actor
     }
     public void spawnIce() {
         int numIce = getWorld().getObjects(icePlatform.class).size();
-        if (Greenfoot.getRandomNumber(100) <= 1 && numIce <= 10 && timer >= 100)
+        if (Greenfoot.getRandomNumber(30) <= 1 && numIce <= 10 && timer >= 75)
         {
-            getWorld().addObject(new icePlatform(), frostLevel.icePositionX, riverY);
-            getWorld().addObject(new placeholder(), frostLevel.icePositionX, riverY);
+            getWorld().addObject(new icePlatform(), frostLevel.icePositionX, riverY+20);
+            getWorld().addObject(new placeholder(), frostLevel.icePositionX, riverY+20);
+            timer = 0;
+        }
+        if (Greenfoot.getRandomNumber(30) <= 1 && numIce <= 10 && timer >= 75)
+        {
+            getWorld().addObject(new icePlatformRight(), frostLevel.icePositionX+500, riverY-25);
+            getWorld().addObject(new placeholder(), frostLevel.icePositionX+500, riverY-25);
             timer = 0;
         }
     }
