@@ -12,18 +12,13 @@ public class placeholder extends Actor
     {
         // Stops everything after 30 seconds
         if (wombat.worldTimer <= 30*60) {
-            if (getY() == getWorld().getHeight()-1) {
+            if (getY() == getWorld().getHeight()-2) {
                 getWorld().removeObject(this);
             } else if (isTouching(birchLog.class) || (isTouching(oakLog.class))) {
                 move(MyWorld.direction);
                 moveScrolling();
-            } else if (getY() >= frostRiver.riverY) {
-                move(2);
-                moveScrolling();
-            } else if (getY() <= frostRiver.riverY) {
-                move(-2);
-                moveScrolling();
-            } else {
+            } else if (isTouching(icePlatform.class)) {
+                move(frostRiver.movement);
                 moveScrolling();
             }
         }

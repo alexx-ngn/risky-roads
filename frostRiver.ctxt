@@ -1,9 +1,11 @@
 #BlueJ class context
 comment0.target=frostRiver
 comment1.params=
-comment1.target=void\ act()
+comment1.target=frostRiver()
 comment2.params=
-comment2.target=void\ moveScrollingRiver()
+comment2.target=void\ act()
 comment3.params=
-comment3.target=void\ spawnIce()
-numComments=4
+comment3.target=void\ moveScrollingRiver()
+comment4.params=
+comment4.target=void\ spawnIce()
+numComments=5

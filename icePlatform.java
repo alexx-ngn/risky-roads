@@ -17,12 +17,12 @@ public class icePlatform extends Actor
                 getWorld().removeObject(this);
             }
         } else {
-            moveScrollingIce();
+            //moveScrollingIce();
         }
         if (wombat.worldTimer >= 60*30 && isAtEdge()) {
             getWorld().removeObject(this);
         } else {
-            move(2);
+            move(frostRiver.movement);
         }
     }
     public void moveScrollingIce()

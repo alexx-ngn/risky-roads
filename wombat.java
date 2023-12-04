@@ -108,8 +108,8 @@ public class wombat extends Actor
         Actor placeholder = getOneIntersectingObject(placeholder.class);
         if (frostRiver != null && placeholder != null) {
             invincible = true;
-            move(1);
-            if (placeholder != null && ice != null)
+            //move(1);
+            if (ice != null)
             {
                 setLocation(ice.getX(), ice.getY());
             }
@@ -126,16 +126,13 @@ public class wombat extends Actor
         Actor placeholder = getOneIntersectingObject(placeholder.class);
         if (frostRiver != null && placeholder != null) {
             invincible = true;
-            move(1);
-            if (placeholder != null && iceRight != null)
+            //move(1);
+            if (iceRight != null)
             {
                 setLocation(iceRight.getX(), iceRight.getY());
             }
         }
-        if (frostRiver != null && invincible != true) {
-            Greenfoot.setWorld(new GameOverWorld());
-        }
-    }
+    } 
     public void carGameOver()
     {
         Actor blueCar = getOneIntersectingObject(blueCar.class);
