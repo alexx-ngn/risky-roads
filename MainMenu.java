@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MainMenu extends World
 {
     private boolean soundHasPlayed = false;
-    private GreenfootSound mySound = new GreenfootSound("MainMenu_Background_Music.wav");
+    private GreenfootSound music = new GreenfootSound("MainMenu_Background_Music.wav");
     /**
      * Constructor for objects of class menu.
      * 
@@ -19,6 +19,9 @@ public class MainMenu extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(500, 500, 1); 
         prepare();
+        if (soundHasPlayed == false) {
+            playSound();
+        }
     }
     /**
      * Prepare the world for the start of the program.
@@ -39,5 +42,9 @@ public class MainMenu extends World
         Button_Settings button_Settings = new Button_Settings();
         addObject(button_Settings,250,280);
         button_Settings.setLocation(425,475);
+    }
+    public void playSound() {
+        music.playLoop();
+        soundHasPlayed = true;
     }
 }

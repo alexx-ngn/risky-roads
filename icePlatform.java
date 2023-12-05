@@ -10,6 +10,7 @@ public class icePlatform extends Actor
 {
     public void act()
     {
+        
         // Stops everything after 30 seconds
         if (wombat.worldTimer <= 60*30) {
             moveScrollingIce();

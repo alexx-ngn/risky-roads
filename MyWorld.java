@@ -55,6 +55,8 @@ public class MyWorld extends World
         prepare();
         wombat.worldTimer = 0;
         wombat.currentLevel = 0;
+        wombat.timeAlive = 0;
+        SettingWorld.inSettings = false;
     }
     
     private void prepare()
