@@ -26,7 +26,7 @@ public class MainMenu extends World
      */
     private void prepare()
     {
-        Greenfoot.playSound("MainMenu_Background_Music.wav");
+        
         
         Button_Exit button_Exit = new Button_Exit();
         addObject(button_Exit,250,330);
