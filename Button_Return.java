@@ -17,7 +17,7 @@ public class Button_Return extends Actor
         if (Greenfoot.mouseMoved(this))
         {            
             setImage("Button_Return_Hover.png");
-        }
+        } 
         if (Greenfoot.mouseClicked(this))
         {
             Greenfoot.setWorld(new MainMenu());

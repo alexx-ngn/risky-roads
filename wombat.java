@@ -5,6 +5,7 @@ public class wombat extends Actor
     public static int wombatY;
     public static int currentLevel;
     public static int worldTimer = 0;
+    public static int timeAlive = 0;
     public static int moveDirection = Greenfoot.getRandomNumber(1);
     public GreenfootImage img = new GreenfootImage("wombat.png");
     public void act()
@@ -13,8 +14,11 @@ public class wombat extends Actor
         carGameOver();
         movementWombat();
         enterFrost();
+        enterEndPortal();
         onIceRight();
         onIce();
+        tornadoGameOver();
+        timeAlive++;
     }
     public void movementWombat()
     {
@@ -34,7 +38,9 @@ public class wombat extends Actor
         
         //Moves wombat until 30 seconds have passed
         if (worldTimer <= 60*30) {
-            moveScrollingWombat();
+            if (SettingWorld.inSettings != true) {
+                moveScrollingWombat();
+            }
         }
         
         // Controls for wombat
@@ -60,6 +66,8 @@ public class wombat extends Actor
     public void enterFrost()
     {
         Actor portal = getOneIntersectingObject(frostPortal.class);
+        
+        //attempted animation for portal
         if(portal != null)
         {
             //invincible = true;
@@ -76,6 +84,12 @@ public class wombat extends Actor
                 setImage(img);
             }
             timer++;
+        }
+    }
+    public void enterEndPortal() {
+        Actor portal = getOneIntersectingObject(endPortal.class);
+        if (portal != null) {
+            Greenfoot.setWorld(new gameEnd());
         }
     }
     public void onLog()
@@ -137,6 +151,11 @@ public class wombat extends Actor
     {
         Actor blueCar = getOneIntersectingObject(blueCar.class);
         if (blueCar != null) {
+            Greenfoot.setWorld(new GameOverWorld());
+        }
+    }
+    public void tornadoGameOver() {
+        if (isTouching(frostStorm.class)) {
             Greenfoot.setWorld(new GameOverWorld());
         }
     }
