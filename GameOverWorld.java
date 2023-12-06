@@ -31,18 +31,17 @@ public class GameOverWorld extends World
         lostTitle.setImage(new GreenfootImage("You lost!!!", 60, Color.WHITE,new Color(0, 0, 0, 0), Color.BLACK));
         
         Display optionText = new Display();
-        addObject(optionText, 250, 80);
+        addObject(optionText, 250, 200);
         optionText.setImage(new GreenfootImage("Press spacebar to restart level.", 30, Color.WHITE,new Color(0, 0, 0, 0), Color.BLACK));
         
         Display mainMenu = new Display();
-        addObject(mainMenu, 250, 105);
+        addObject(mainMenu, 250, 250);
         mainMenu.setImage(new GreenfootImage("Press escape key to go back to main menu.", 30, Color.WHITE,new Color(0, 0, 0, 0), Color.BLACK));
         
         int timerValue = (int) (System.currentTimeMillis() - timeWelcomeScreenCreation)/1000;
         
         //Greenfoot.playSound("GameOverWorld.wav");
         
-        timer.setImage(new GreenfootImage("Your time Alive: " + wombat.worldTimer / 60, 35, Color.WHITE,new Color(0, 0, 0, 0), Color.BLACK));
         
         if (Greenfoot.isKeyDown("space"))
         {

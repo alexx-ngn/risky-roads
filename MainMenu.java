@@ -28,6 +28,10 @@ public class MainMenu extends World
      */
     private void prepare()
     {
+<<<<<<< HEAD
+=======
+        
+>>>>>>> e9696919b1380174ffc5c8a5f056989b0c66bfca
         
         Button_Exit button_Exit = new Button_Exit();
         addObject(button_Exit,250,330);
