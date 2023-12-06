@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MainMenu extends World
 {
-    private boolean soundHasPlayed = false;
     private GreenfootSound music = new GreenfootSound("MainMenu_Background_Music.wav");
     /**
      * Constructor for objects of class menu.
@@ -19,7 +18,7 @@ public class MainMenu extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(500, 500, 1); 
         prepare();
-        if (soundHasPlayed == false) {
+        if (wombat.ifPlayedSound == false) {
             playSound();
         }
     }
@@ -29,7 +28,6 @@ public class MainMenu extends World
      */
     private void prepare()
     {
-        Greenfoot.playSound("MainMenu_Background_Music.wav");
         
         Button_Exit button_Exit = new Button_Exit();
         addObject(button_Exit,250,330);
@@ -45,6 +43,6 @@ public class MainMenu extends World
     }
     public void playSound() {
         music.playLoop();
-        soundHasPlayed = true;
+        wombat.ifPlayedSound = true;
     }
 }

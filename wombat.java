@@ -7,6 +7,7 @@ public class wombat extends Actor
     public static int worldTimer = 0;
     public static int timeAlive = 0;
     public static int moveDirection = Greenfoot.getRandomNumber(1);
+    public static boolean ifPlayedSound = false;
     public GreenfootImage img = new GreenfootImage("wombat.png");
     public void act()
     {
